@@ -1,48 +1,150 @@
 .container {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  background-image: url("../images/wall.png");
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-image: url("../images/wall.png");
 }
 
 .menu {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-
-  height: 90px;
-  width: 100%;
-  background-color: #000000;
-  color: #ffffff;
-  border-bottom: 5px solid #ffd700;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 90px;
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    border-bottom: 5px solid rgb(252, 193, 0);
 }
 
 .panel {
-  margin-top: 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .square {
-  height: 150px;
-  width: 150px;
-  border: 1px solid #000000;
-  background-color: #1aeaa5;
+    height: 150px;
+    width: 150px;
+    border: 1px solid black;
+    background-color: rgb(31, 172, 125);
 }
 
 .enemy {
-  background-image: url("../images/ralph.png");
-  background-size: cover;
+    background-image: url("../images/ralph.png");
+    background-size: cover;
 }
 
 .menu-lives {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.menu-time h2:nth-child(2),
-.menu-score h2:nth-child(2) {
-  margin-top: 1rem;
+.menu-time h2,
+.menu-score h2 {
+    margin-top: 1rem;
+}
+
+.alerta-escondido {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(255, 0, 0);
+    padding: 20px;
+    border: 1px solid black;
+    z-index: 1000;
+    font-family: "Press Start 2P", system-ui;
+}
+
+.alerta-mostrado {
+    display: block;
+}
+
+button {
+    font-family: "Press Start 2P", system-ui;
+    font-size: 1.5rem;
+    padding: 10px 20px;
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 0, 0);
+    border: 1px solid rgb(255, 0, 0);
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+#game-over {
+    font-family: 'Press Start 2P', system-ui;
+    font-size: 2rem;
+    color: red;
+    background-color: black;
+    border: 5px solid red;
+    padding: 20px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+    display: none;
+}
+
+.game-over {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.game-over audio {
+    width: 100%;
+}
+
+body {
+    background-image: url("../images/wall.png");
+    margin: 0;
+    padding: 0;
+}
+
+#ranking-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #111;
+    color: white;
+    border: 2px solid rgb(255, 0, 0);
+    padding: 20px;
+    width: 250px;
+    text-align: center;
+    font-family: 'Press Start 2P', monospace;
+    border-radius: 8px;
+    z-index: 1000;
+}
+
+#ranking-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 15px;
+    text-align: left;
+}
+
+#ranking-list li {
+    margin-bottom: 5px;
+    font-size: 0.75rem;
+}
+
+#ranking-container button {
+    margin-top: 10px;
+    padding: 6px 12px;
+    font-size: 0.6rem;
+    background-color: rgb(255, 0, 0);
+    color: white;
+    border: none;
+    cursor: pointer;
 }
